@@ -25,4 +25,8 @@ public class ClientService {
 
         return client.getApiKey();
     }
+
+    public boolean isValidApiKey(String apiKey) {
+        return repository.existsByApiKey(apiKey);
+    }
 }
