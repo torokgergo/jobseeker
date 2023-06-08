@@ -23,7 +23,7 @@ public class ClientService {
 
         repository.save(client);
 
-        return client.getApiKey();
+        return client.getApiKey().toString();
     }
 
     public boolean isValidApiKey(String apiKey) {
