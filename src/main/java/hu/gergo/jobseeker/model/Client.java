@@ -23,10 +23,10 @@ public class Client {
     @Column(unique = true)
     private String email;
 
-    private final String apiKey;
+    private final UUID apiKey;
 
     public Client() {
-        apiKey = UUID.randomUUID().toString();
+        apiKey = UUID.randomUUID();
     }
 
     public Long getId() {
@@ -53,7 +53,7 @@ public class Client {
         this.email = email;
     }
 
-    public String getApiKey() {
+    public UUID getApiKey() {
         return apiKey;
     }
 }
