@@ -6,6 +6,8 @@ import hu.gergo.jobseeker.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class ClientService {
 
@@ -27,6 +29,6 @@ public class ClientService {
     }
 
     public boolean isValidApiKey(String apiKey) {
-        return repository.existsByApiKey(apiKey);
+        return repository.existsByApiKey(UUID.fromString(apiKey));
     }
 }
